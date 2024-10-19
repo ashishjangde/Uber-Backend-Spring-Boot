@@ -3,16 +3,25 @@ package com.example.uberbackendspringboot.services.impl;
 import com.example.uberbackendspringboot.dto.DriverDto;
 import com.example.uberbackendspringboot.dto.RideDto;
 import com.example.uberbackendspringboot.dto.RideRequestDto;
+import com.example.uberbackendspringboot.dto.RiderDto;
+import com.example.uberbackendspringboot.entities.RideRequestEntity;
 import com.example.uberbackendspringboot.services.RiderService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 @Service
+@RequiredArgsConstructor
 public class RiderServiceImpl implements RiderService {
+
+    private final ModelMapper modelMapper;
+
     @Override
     public RideRequestDto requestRide(RideRequestDto rideRequestDto) {
+        RideRequestEntity rideRequestEntity = modelMapper.map(rideRequestDto, RideRequestEntity.class);
         return null;
     }
 
@@ -27,7 +36,7 @@ public class RiderServiceImpl implements RiderService {
     }
 
     @Override
-    public RideDto getMyProfile() {
+    public RiderDto getMyProfile() {
         return null;
     }
 

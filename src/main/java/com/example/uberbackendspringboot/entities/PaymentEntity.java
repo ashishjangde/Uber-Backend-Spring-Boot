@@ -3,24 +3,22 @@ package com.example.uberbackendspringboot.entities;
 import com.example.uberbackendspringboot.entities.enums.PaymentMethod;
 import com.example.uberbackendspringboot.entities.enums.PaymentStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "payment")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class PaymentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long paymentId;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;

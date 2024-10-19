@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class RideDto {
 
-    private Long rideId;
+    private Long id;
 
     private Point pickupLocation;
 
