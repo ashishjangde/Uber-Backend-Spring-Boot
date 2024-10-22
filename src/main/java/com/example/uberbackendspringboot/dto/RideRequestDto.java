@@ -28,5 +28,7 @@ public class RideRequestDto {
 
     private PaymentMethod paymentMethod;
 
+    private Double fare;
+
 
 }
